@@ -19,3 +19,4 @@ nuevo_nombre = nombre[0] + cadena
 for aux in range(1, len(nombre[-2])):
     nuevo_nombre += "." + nombre[aux]
 print(nuevo_nombre)
+print("cambios....")
