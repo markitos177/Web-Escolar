@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends "bases.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>
+            Iniciar Sesión
+        </title>
+    {% endblock %}
+    {% block css %}
+    <link rel="stylesheet" href='{% static "./estilo/login.css" %}'>
+    {% endblock %}
+</head>
+<body>
+    {% block cuerpo %}
+    <div id="mover_formulario">
+        <form method="post">
+            <h1>Accede a tu cuenta</h1>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Iniciar Sesion">
+            <a href="{% url 'password_reset' %}">
+                ¿Has olvidado la contraseña?
+            </a>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>

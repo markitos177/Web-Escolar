@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% extends "bases.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Mi perfil</title>
+    {% endblock %}
+    {% block css %}
+    <link rel="stylesheet" href='{% static "./estilo/perfil.css" %}'>
+    {% endblock %}
+</head>
+<body>
+    {% block cuerpo %}
+    <div id="contenedor_saludo">
+        <h1 id="centrar_saludo">Te damos la bienvenida, <br> @{{request.user.username}}</h1>
+    </div>
+    <div id="mover_avatar">
+        <a href="../../../media/users/{{request.user.id}}/Perfil/{{user.imagen}}" target="_blank" rel="noopener noreferrer">
+            <img src="../../../media/users/{{request.user.id}}/Perfil/{{user.imagen}}">
+        </a>
+    </div>
+    <div id="desplazar_botones_datos">
+        <div class="personalizar_boton">
+            <a href="{% url 'password_change' %}" class="botones">Cambiar contraseña</a>
+        </div>
+        <div class="personalizar_boton">
+            <a href="{% url 'cambiar-datos' %}" class="botones">Cambiar datos de la cuenta</a>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

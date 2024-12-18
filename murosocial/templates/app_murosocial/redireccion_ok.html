@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends "bases.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>Avisos</title>
+    {% endblock %}
+    {% block css %}
+        <link rel="stylesheet" href='{% static "./estilo/redirecciones.css" %}'>
+    {% endblock %}
+</head>
+<body>
+    {% block cuerpo %}
+    <div id="mover_contenedor">
+        <div id="aviso_ok">
+            <h3>{{ mensaje.titulo }}</h3>
+            <p>{{ mensaje.texto }}</p>
+            {% if mensaje.url %}
+                <a href="{% url mensaje.url %}">{{ mensaje.textolink }}</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

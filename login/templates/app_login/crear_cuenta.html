@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends "bases.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>
+            Crear Cuenta
+        </title>
+    {% endblock %}
+    {% block css %}
+        <link rel="stylesheet" href='{% static "./estilo/crear_cuenta.css" %}'>
+    {% endblock %}
+</head>
+<body>
+    {% block cuerpo %}
+    <div id="contenedor">
+        <form method="post" id="formulario">
+            <legend>
+                Crear cuenta
+            </legend>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div id="mover_boton">
+                <input type="submit" value="Crear Cuenta">
+            </div>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>

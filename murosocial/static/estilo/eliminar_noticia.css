@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    margin-top: 2%;
+}
+
+h4 {
+    font-weight: bold;
+    color: rgb(0, 221, 221);
+}
+
+#enlace {
+    display: inline-block;
+    font-size: 1.1rem;
+    color: aqua;
+    text-decoration: underline;
+}
+
+#enlace:hover {
+    font-size: 1.2rem;
+}
+
+tr {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 2vw;
+}
+.td {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 124, 124);
+    margin: 2vw 0;
+}
+#centrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#caja-check {
+    width: 3vw;
+    height: 6vh;
+    margin-right: 1vw;
+}
+
+input[type="button"] {
+    font-size: 1rem;
+    padding: 10px 20px 10px 20px;
+    background-color: rgba(255, 0, 0, 0.35);
+    border-radius: 40px;
+    color: white;
+    border: 2px solid white;
+}
+
+input[type="button"]:hover {
+    background-color: rgba(255, 0, 0, 0.511);
+}
+
+#td_botones {
+    width: 60%;
+}
+
+#separar_botones {
+    display: flex;
+    justify-content: space-around;
+}
+
+#otro-enlace {
+    font-size: 1rem;
+    padding: 10px 20px 10px 20px;
+    background-color: transparent;
+    border-radius: 40px;
+    color: white;
+    border: 2px solid white;
+    text-decoration: none;
+}
+
+#otro-enlace:hover {
+    background-color: rgba(128, 128, 128, 0.291);
+}
+
+.recuperar {
+    width: auto;
+    background-color:rgb(0, 124, 124);
+    background-color:rgb(0, 124, 52);
+    background-color:rgb(0, 134, 40);
+}
+.no-mostrar {
+    display: none
+}
+
+.contenedor-botones {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.div {
+    width: 25vw;
+}
+
+#fuente {
+    font-size: 1.2rem;
+}

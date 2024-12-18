@@ -1,0 +1,160 @@
+/* ESTE CSS ES REUTILIZADO PARA CADA PLANTILLA QUE TENGA QUE VER CON LOS CAMBIOS DE CONTRASEÑA
+QUE PROVEE LA APLICACIÓN DE DJANGO */
+
+#mover_formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#colorear_formulario {
+    background-color: rgb(40, 40, 40);
+    width: 60%;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 30px;
+}
+
+form ul {
+    flex-wrap: wrap;
+    list-style-type: initial;
+    margin-left: 30px;
+    text-align: start;
+}
+
+#id_new_password2_helptext {
+    display: block;
+}
+
+input[type="submit"] {
+    margin-bottom: 20px;
+}
+
+input[type="password"] {
+    border-radius: 40px;
+}
+
+/*======================================
+PANTALLA EXTRA CHIQUITO, MOBILE SMALL (XS)
+320
+=======================================*/
+@media(max-width: 768px){
+    #colorear_formulario {
+        width: 100%;
+    }
+
+    #id_new_password2 {
+        margin-bottom: 10px;
+    }
+
+    input[type="password"] {
+        width: 90%;
+    }
+    .col-cp-0{display: none;}
+    .col-cp-1{width: 8.33333333%;}
+    .col-cp-2{width: 16.66666667%;}
+    .col-cp-3{width: 25%;}
+    .col-cp-4{width: 33.33333333%;}
+    .col-cp-5{width: 41.66666667%;}
+    .col-cp-6{width: 50%;}
+    .col-cp-7{width: 58.33333333%;}
+    .col-cp-8{width: 66.66666667%;}
+    .col-cp-9{width: 75%;}
+    .col-cp-10{width: 83.33333333%;}
+    .col-cp-11{width: 91.66666667%;}
+    .col-cp-12{width: 100%;}	
+}
+
+/*======================================
+PANTALLA GRANDE, Laptop (ms)
+769 - 1024
+=======================================*/
+
+@media(min-width: 769px) and (max-width: 1024px){
+    .col-pl-0{display: none;}
+    .col-pl-1{width: 8.33333333%;}
+    .col-pl-2{width: 16.66666667%;}
+    .col-pl-3{width: 25%;}
+    .col-pl-4{width: 33.33333333%;}
+    .col-pl-5{width: 41.66666667%;}
+    .col-pl-6{width: 50%;}
+    .col-pl-7{width: 58.33333333%;}
+    .col-pl-8{width: 66.66666667%;}
+    .col-pl-9{width: 75%;}
+    .col-pl-10{width: 83.33333333%;}
+    .col-pl-11{width: 91.66666667%;}
+    .col-pl-12{width: 100%;}
+}
+
+/*======================================
+PANTALLA GRANDE, Laptop (sm)
+1025 - 1440
+=======================================*/
+
+@media(min-width: 1025px) and (max-width: 1440px){
+    .col-lg-0{display: none;}
+    .col-lg-1{width: 8.33333333%;}
+    .col-lg-2{width: 16.66666667%;}
+    .col-lg-3{width: 25%;}
+    .col-lg-4{width: 33.33333333%;}
+    .col-lg-5{width: 41.66666667%;}
+    .col-lg-6{width: 50%;}
+    .col-lg-7{width: 58.33333333%;}
+    .col-lg-8{width: 66.66666667%;}
+    .col-lg-9{width: 75%;}
+    .col-lg-10{width: 83.33333333%;}
+    .col-lg-11{width: 91.66666667%;}
+    .col-lg-12{width: 100%;}
+}
+/*======================================
+PANTALLA GRANDE, Laptop (md)
+1441
+=======================================*/
+@media(min-width: 1441px){
+    h3 {
+        font-size: 2.7rem;
+        margin-top: 25px;
+    }
+
+    #colorear_formulario p {
+        font-size: 2.3rem;
+    }
+
+    form li {
+        font-size: 2.1rem;
+        margin-left: 20px;
+    }
+
+    input[type="password"], input[type="email"] {
+        border: 4px solid white;
+        border-radius: 60px;
+    }
+
+    input[type="submit"] {
+        font-size: 2.5rem;
+        border-radius: 60px;
+        padding: 15px 60px 15px 60px;
+    }
+
+    form a {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+
+
+    .col-pc-0{display: none;}
+    .col-pc-1{width: 8.33333333%;}
+    .col-pc-2{width: 16.66666667%;}
+    .col-pc-3{width: 25%;}
+    .col-pc-4{width: 33.33333333%;}
+    .col-pc-5{width: 41.66666667%;}
+    .col-pc-6{width: 50%;}
+    .col-pc-7{width: 58.33333333%;}
+    .col-pc-8{width: 66.66666667%;}
+    .col-pc-9{width: 75%;}
+    .col-pc-10{width: 83.33333333%;}
+    .col-pc-11{width: 91.66666667%;}
+    .col-pc-12{width: 100%;}
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% extends "bases.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>Contacto</title>
+    {% endblock %}
+    {% block css %}
+        <link rel="stylesheet" href='{% static "./estilo/contacto.css" %}'>
+    {% endblock %}
+</head>
+<body>
+    {% block cuerpo %}
+        <div id="contenedor-absoluto">
+            <div id="contenedor-body">
+                <p class="titulos">
+                    Ubicación
+                </p>
+                <div class="contenedor_escuela">
+                    <iframe class="col-pc-10 col-cp-12" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d407.1556868380482!2d-58.2010918!3d-35.2750221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2b088af0d3f2d%3A0xb8d8967b6fd0f465!2sEscuela%20de%20Educaci%C3%B3n%20Secundaria%203%20%22Guillermo%20Jeppener%22!5e0!3m2!1ses-419!2sar!4v1730743012949!5m2!1ses-419!2sar">
+                    </iframe>
+                    <p id="linea_parrafo" class="col-pc-10 col-cp-12">
+                        La escuela de Educación Secundaria 3 "Guillermo Jeppener" está  
+                        ubicada en la calle "J. Bautista Sargiott", un lugar tranquilo  
+                        y silencioso. A un costado del 
+                        establecimiento se encuentra una sala médica, disponible para atender 
+                        cualquier emergencia que pudiera surgir. Además, a solo media cuadra 
+                        del instituto, encontrarás un jardín de infantes. <br>
+                        <br>
+                        Te invitamos a conocer nuestras instalaciones, donde estaremos 
+                        encantados de resolver cualquier duda que tengas. Puedes visitarnos 
+                        en horarios de mañana, tarde o noche. Te garantizamos que inscribir a tu 
+                        hijo en EESN°3 Jeppener será una excelente decisión, asegurando una 
+                        educación de calidad y un ambiente de aprendizaje seguro.
+                    </p>
+                </div>
+
+                <p class="titulos">
+                    Contacto
+                </p>
+                <div class="contenedor_contacto" id="margin_contacto">
+                    <div id="centrar_contacto">
+                        <div id="desplazar_contacto">
+                            <div class="contacto">
+                                <img src='{% static "./imagenes/telefono.png" %}' alt="Teléfono" title="Teléfono" class="separar_imagen">
+                                <p>
+                                    02223 49-8429
+                                </p>
+                            </div>
+                            <div class="contacto">
+                                <img src='{% static "./imagenes/gmail.png" %}' alt="Correo electrónico" title="Correo electrónico" class="separar_imagen">
+                                <p>
+                                    eesn3jeppener@abc.gob.ar
+                                </p>
+                            </div>
+                        </div>
+                        <div id="desplazar_redes">
+                            <p id="cartel_visitar">
+                                ¡Visita nuestras redes sociales!
+                            </p>
+                            <div id="enfilar_redes">
+                                <div class="redes">
+                                    <img src='{% static "./imagenes/facebook.png" %}' alt="Facebook" title="Facebook" class="separar_imagen">
+                                    <a href="https://www.facebook.com/secundaria.3.jeppener/?locale=es_LA" target="_blank">
+                                        Facebook
+                                    </a>
+                                </div>
+                                <p id="guion_redes">
+                                    -
+                                </p>
+                                <div class="redes">
+                                    <img src='{% static "./imagenes/instagram.png" %}' alt="Instagram" title="Instagram" class="separar_imagen">
+                                    <a href="https://www.instagram.com/secundaria.3.jeppener/" target="_blank">
+                                        Instagram
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="envianos_correo">
+                        <h2 class="titulos">
+                            ¿Preguntas? <br>
+                            ¡Envíanos un correo!
+                        </h2>
+                        <form method="post">
+                            <fieldset id="ajustar_formulario">
+                                <legend id="legend_contacto">
+                                    Complete el formulario
+                                </legend>
+                                {% csrf_token %}
+                                {{ instancia.as_p }}   
+                                <input type="submit" value="Enviar correo">
+                            </fieldset>
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+
+    {% block footer %}
+        <footer>
+            <span id="centrado">
+                © Derechos reservados de EESN3°Jeppener || 2024 - Actualidad
+            </span>
+        </footer>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% extends "bases.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>Publicaciones</title>
+    {% endblock %}
+
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'estilo/eliminar_noticia.css' %}">
+        <link rel="stylesheet" href="{% static 'estilo/inicio.css' %}">
+    {% endblock %}
+
+    {% block script %}
+        <script>
+        
+            function preguntar(){
+                if(confirm("¿Estás seguro que deseas eliminar las noticias seleccionadas?")){
+                    return document.getElementById("verdadero").click()
+                }else{
+                    return document.getElementById("resetear").click()
+                }
+            }
+
+
+        </script>
+    {% endblock %}
+</head>
+<body>
+    {% block cuerpo %}
+    
+        <div id="publicaciones">
+            <h2 class="h3" id="titulo">Noticia en detalle</h2>
+            <div class="separar_publicacion">
+                <table>
+                    <tr>
+                        <th>{{ noticia.titulo }}</th>
+                    </tr>
+                    <tr class="contenedor-des">
+                        <td><h4>descripción:</h4></td>
+                        <td class="des" id="fuente">{{ noticia.descripcion }}</td>
+                    </tr>
+                    <tr>
+                        <td class="imagenes">
+                        {% for img in noticia.imagenes.all %}
+                            <div class="contenedor-img">
+                                <!--Acá "MEDIA_URL" es la "constante" que está definida en el settings,
+                                la cual contiene la ubicación de la carpeta "media"-->
+                                <a href="{{MEDIA_URL}}users/{{ img.nom_usuario }}/img_noticias/{{img.imagen}}" target="_blank" title="{{noticia.titulo}}">
+                                    <img src="{{MEDIA_URL}}users/{{ img.nom_usuario }}/img_noticias/{{img.imagen}}" alt="" class="imagen">
+                                </a>
+                                <!--"img" representa, dentro del "for", a cada una de las instancias
+                                de la tabla "Imagen" que están asociadas a una publicación. Éstas instancias tienen
+                                un campo llamado "imagen", el cual contiene la url de la imagen.-->
+                            </div>
+                        {% endfor %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>Fecha de Creación:</h4>
+                        </td>
+                        <td>{{ noticia.fecha_creacion }}</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>Creador:</h4>
+                        </td>
+                        <td>{{ noticia.creador.username }}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="contenedor-botones">
+                    <input type="submit" value="" id="verdadero"class="no-mostrar mas-width">
+                    <input type="button" value="Eliminar esta Noticia" onclick="preguntar()" class="boton eliminar" id="mas-width">
+                    <a href="{% url 'inicio' %}" id="otro-enlace">Cancelar y volver</a>
+                </div>
+            </form>
+        </div>
+    {% endblock %}
+</body>
+</html>

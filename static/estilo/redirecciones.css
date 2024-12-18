@@ -1,0 +1,18 @@
+#mover_contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+#aviso_ok {
+    font-size: 30px;
+    color: greenyellow;
+    text-align: center;
+    background-color: rgb(15, 15, 95);
+    width: 750px;
+    padding: 30px;
+    background-image: url(../imagenes/fondo_mensaje_ok.png);
+    text-shadow: 0px 0px 16px green;
+}

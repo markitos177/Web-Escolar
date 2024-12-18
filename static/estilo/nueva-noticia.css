@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.contenedor {
+    text-align: center;
+    width: 50vw;
+    background-color: gray;
+    margin: auto;
+}
+
+
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 2vw;
+    border: solid
+}
+
+textarea, input {
+    width: 100%;
+}
+
+#boton {
+    margin-top: 2vh;
+    color: black;
+}
+#boton:hover {
+    color: white;
+    background-color: black;
+}
+
+legend {
+    font-size: 7vh;
+    font-weight: 600;
+
+}
+
+p > label {
+    color: black;
+    font-size: 5vh;
+}

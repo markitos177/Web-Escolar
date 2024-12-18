@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.imagen {
+    width: 100%;
+    display: inline-block;
+}
+
+.imagenes {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.contenedor-img {
+    width: 29%;
+    margin: 0 1vw;
+}
+
+.contenedor-des {
+    width: 100%;
+}
+.des {
+    width: 100%;
+}

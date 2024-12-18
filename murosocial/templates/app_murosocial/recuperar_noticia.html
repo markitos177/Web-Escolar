@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+{% extends "bases.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>Recuperar Noticias</title>
+    {% endblock %}
+
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'estilo/eliminar_noticia.css' %}">
+    {% endblock %}
+
+    {% block script %}
+        <script>
+        
+            function preguntar(){
+                if(confirm("¿Estás seguro que deseas recuperar las noticias seleccionadas?")){
+                    return document.getElementById("verdadero").click()
+                }else{
+                    return document.getElementById("resetear").click()
+                }
+            }
+
+
+        </script>
+    {% endblock %}
+
+</head>
+<body>
+    {% block cuerpo %}
+        <div id="publicaciones">
+        {% if publicaciones %}
+            <form method="POST" id="formulario">
+                {% csrf_token %}
+
+                <table>
+                    <tr>
+                        <th id="th">
+                            <h3 class="h3">Todas las Noticias Eliminadas</h3>
+                        </th>
+                    </tr>
+                {% for fila in publicaciones %}
+                    <tr>
+                        <td class="td">
+                            <input type="checkbox" name="{{fila.id}}" id="caja-check">
+
+                            <!--
+                            acá abajo, en id_noticia("nom. de la variable defininida en la url") = fila.id
+                            no es necesario usar llaves para declarar la variable "fila.id", ya que está
+                            dentro de la etiqueta "url", el cual interpreta que es una varible Y ya la reconoce.
+                            -->
+                            <a href="{% url 'detalles-recuperacion' id_noticia=fila.id %}" target="_blank" title="Detalles de la Publicación">
+                                {{fila.titulo}}
+                            </a>
+                            <!--En el "anchor", lo que se está haciendo es, mediante la etiqueta "url",
+                            redireccionar a la url de name=="publicaciones". Como ésta url recibe un parametro
+                            se lo pasamos, indicando la variable con un espacio entre medio:
+                            variable-recibidora= parámetro-mandado-->
+                        </td>
+                    </tr>
+                
+                {% endfor %}
+                </table>
+                <div class="contenedor-botones">
+                    <!--type=submit, éste botón, tiene la acción predeterminada de enviar un 
+                    formulario-->
+                    <input type="submit" value="" id="verdadero" class="no-mostrar">
+                    
+                    <!--type=button, éste botón, no tiene ninguna acción predeterminada, se lo
+                    usar para asignarle eventos con JavaScript. Por sí solo no hace nada.-->
+                    <input type="button" value="Recuperar" onclick="preguntar()" class="boton recuperar" >
+                    
+                    <!--type=reset, éste botón, elimina todos los valores ingresados en los 
+                    campos del formulario-->
+                    <input type="reset" value="" id="resetear" class="no-mostrar">
+                    
+                    
+                    <!--Explicacion del Funcionamiento de los Tres botones-->
+
+                    <!--Al apretar el "type=button" se llamará a la función "preguntar()" de JavaScript,
+                    la cual, mediante el método de JS "confirm()", mostrará un cuadro de diálogo con
+                    las opciones aceptar/cancelar, que retornará True o False.-->
+                    
+                    <!--Si aprieta aceptar, será True, entra en el if, y se retorna el click del 
+                    elemento con id="verdadero", en este caso, éste el elemento es el "type=submit",
+                    el cual es el botón encargado de enviar el form-->
+
+                    <!--Caso contrario, se aprieta en cancelar, será False, el cual retornará el
+                    click del elemento con id="resetear", que en éste caso, es el "type=reset", botón
+                    encargado de resetear los campos del formulario-->
+                    <a href="{% url 'inicio' %}" id="otro-enlace">Cancelar y volver</a>
+                </div>
+            </form>
+        {% else %}
+            <table>
+                <tr>
+                    <th>
+                        <h3 class="h3">No hay noticias para recuperar</h3>
+                    </th>
+                </tr>
+                
+                <tr>
+                    <td>Diríjase a la página para <a href="{% url 'eliminar-noticia' %}" id="enlace">eliminar más noticias!</a></td>
+                </tr>
+        </table>
+        {% endif %}
+    </div>
+    {% endblock %}
+</body>
+</html>

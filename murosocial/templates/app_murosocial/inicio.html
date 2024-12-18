@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% extends "bases.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Document
+    </title>
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'estilo/inicio.css' %}">
+    {% endblock %}
+</head>
+<body>
+    {% block cuerpo %}
+        <div id="publicaciones">
+            {% if publicaciones %}
+                {% for fila in publicaciones %}
+                    <div class="separar_publicacion">
+                        <table>
+                            <tr>
+                                <th>{{ fila.titulo }}</th>
+                            </tr>
+                            <tr class="contenedor-des">
+                                <td class="des">{{ fila.descripcion }}</td>
+                            </tr>
+                            <tr>
+                                <td class="imagenes">
+                                {% for img in fila.imagenes.all %}
+                                    <div class="contenedor-img">
+                                        <!--Acá "MEDIA_URL" es la "constante" que está definida en el settings,
+                                        la cual contiene la ubicación de la carpeta "media"-->
+                                        <a href="{{img.url_absoluta}}" target="_blank" title="{{fila.titulo}}">
+                                            <img src="{{img.url_absoluta}}" alt="" class="imagen">
+                                        </a>
+                                        {{img.url_absoluta}}
+                                        <!--"img" representa, dentro del "for", a cada una de las instancias
+                                        de la tabla "Imagen" que están asociadas a una publicación. Éstas instancias tienen
+                                        un campo llamado "imagen", el cual contiene la url de la imagen.-->
+                                    </div>
+                                {% endfor %}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="separar_publicacion">
+                    <table>
+                        <tr>
+                            <th>Sin publicaciones</th>
+                        </tr>
+                        <tr>
+                            <td id="aviso-no-publicaciones">
+                                ¡No hay publicaciones disponibles!
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            {% endif %}
+        </div>
+    {% endblock %}
+</body>
+</html>

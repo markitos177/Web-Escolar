@@ -1,0 +1,118 @@
+#contenedor-absoluto {
+    display: flex;
+    justify-content: center;
+}
+
+#contenedor-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 84vw;
+    margin-top: 50px;
+    background-image: url(../imagenes/fondo_contacto.jpg);
+    background-size: cover;
+    /* Primeras coordenadas horizontales, y las segundas son verticales */
+    background-position: -345px 0px;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+}
+
+#linea_parrafo {
+    border-left: 2px dashed whitesmoke;
+    border-radius: 0px;
+    padding-top: 10px;
+    padding-left: 30px;
+    width: 600px;
+}
+
+.contenedor {
+    width: 80vw;
+    display: flex;
+    justify-content: space-evenly;  
+}
+
+#margin_contacto {
+    margin-bottom: 40px;
+}
+
+.titulos {
+    font-size: 28px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#envianos_correo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 11px;
+}
+
+#legend_contacto {
+    padding: 10px;
+}
+
+#mover_formulario {
+    margin-top: 100px;
+}
+
+#ajustar_formulario {
+    width: 100px;
+    height: 410px;
+}
+
+#id_mensaje {
+    width: 270px;
+    max-width: 270px;
+    min-width: 170px;
+    height: 150px;
+    max-height: 150px;
+    min-height: 75px;
+}
+
+form input {
+    margin-bottom: 10px;
+}
+
+.redes {
+    display: flex;
+}
+
+.redes p {
+    font-size: 26px;
+}
+
+.redes a {
+    font-size: 26px;
+    font-weight: bold;
+    color: orange;
+}
+
+.redes a:hover {
+    font-size: 32px;
+}
+
+#centrar_redes {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.separar_imagen {
+    margin-right: 7px;
+    margin-bottom: 5px;
+}
+
+#cartel_visitar {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    background:linear-gradient(to right, orange, purple);
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}

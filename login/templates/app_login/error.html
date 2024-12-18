@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends "bases.html" %}
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>¡Error!</title>
+    {% endblock %}
+    {% block css %}
+    <link rel="stylesheet" href='{% static "./estilo/error.css" %}'>
+    {% endblock %}
+</head>
+<body>
+    {% block cuerpo %}
+    <div id="mover_error">
+        <span id="colorear_error">
+            <h1 id="centrar_error_aviso">¡Se ha producido un error! :(</h1>
+
+            {% if error.password2 %}
+                <h3>Error en los campos de contraseña</h3>
+                <p>{{ error.password2 }}</p>
+            {% endif %}
+
+            {% if error.username %}
+                <h3>Error en el campo de "Nombre de usuario"</h3>
+                <p>{{ error.username }}</p>
+            {% endif %}
+
+            {% if error.email %}
+                <h3>Error en el campo de "Dirección de correo electrónico"</h3>
+                <p>{{ error.email }}</p>
+            {% endif %}
+        </span>
+    </div>
+    {% endblock %}
+</body>
+</html>

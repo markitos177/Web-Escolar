@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "bases.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Cambiar datos</title>
+    {% endblock %}
+    {% block css %}
+    <link rel="stylesheet" href='{% static "./estilo/cambiar_datos.css" %}'>
+    {% endblock %}
+</head>
+<body>
+    {% block cuerpo %}
+        <div id="mover_formulario">
+            <div id="colorear_formulario">
+                <h3>Aquí podrás modificar los datos que tú quieras</h3>
+                <h4>Los campos son <u><b>opcionales</b></u></h4>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Cambiar datos">
+                    <a href="{% url 'perfil' %}">No cambiar datos</a>
+                </form>
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>

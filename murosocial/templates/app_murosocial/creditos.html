@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+{% extends "bases.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>Creditos</title>
+    {% endblock %}
+    {% block css %}
+        <link rel="stylesheet" href='{% static "./estilo/creditos.css" %}'>
+    {% endblock %}
+</head>
+<body>
+    {% block cuerpo %}
+        <div id="mover-contenedor">
+            <div class="cuadro-creditos">
+                <h2>Roles de gestión:</h2>
+                <ul>
+                    <li>
+                        <b>Project Manager (Gerente del Proyecto):</b>
+                        Responsable de planificar, ejecutar y supervisar el proyecto.
+                        Coordina al equipo y se asegura de cumplir con los plazos y el presupuesto
+                    </li>
+                    <li>
+                        <b>Product Owner (Propietario del Producto):</b>
+                        Representa la voz del cliente dentro del equipo y prioriza las características
+                        y funcionalidades en función del valor que aportan al proyecto
+                    </li>
+                    <li>
+                        <b>Scrum Master (Facilitador de Scrum):</b>
+                        Facilita el proceso Scrum (o metodologías ágiles), ayudando a
+                        eliminar obstáculos y asegurando que el equipo siga las prácticas ágiles
+                    </li>
+                </ul>
+
+                <h2>Roles Técnicos Principales</h2>
+                <ul>
+                    <li>
+                        <b>Frontend Developer (Desarrollador Frontend):</b>
+                        Se enfoca en el desarrollo de la interfaz de usuario
+                        usando tecnologías como HTML, CSS y JavaScript (o frameworks como React, Angular o Vue)
+                    </li>
+                    <li>
+                        <b>Backend Developer (Desarrollador Backend):</b>
+                        Trabaja en la lógica del servidor y la base de datos, usando
+                        tecnologías como Python, Django, Node.js, Java o SQL
+                    </li>
+                    <li>
+                        <b>Fullstack Developer (Desarrollador Fullstack):</b>
+                        Realiza tanto desarrollo frontend como backend, manejando tanto la interfaz
+                        de usuario como la lógica del servidor.
+                    </li>
+                    <li>
+                        <b>DevOps Engineer (Ingeniero DevOps):</b>
+                        Especialista en despliegue y mantenimiento de aplicaciones, infraestructura
+                        y herramientas de automatización para integrar el desarrollo y las operaciones de manera fluida.
+                    </li>
+                    <li>
+                        <b>Database Administrator (Administrador de Bases de Datos):</b>
+                        Responsable de diseñar, implementar y gestionar
+                        bases de datos para asegurar el acceso rápido y seguro a los datos.
+                    </li>
+                    <li>
+                        <b>Mobile Developer (Desarrollador Móvil):</b>
+                        Desarrolla aplicaciones para dispositivos móviles (Android e iOS), utilizando
+                        tecnologías como Swift, Kotlin o React Native.
+                    </li>
+                </ul>
+
+                <h2>Roles Especializados</h2>
+                <ul>
+                    <li>
+                        <b>UX/UI Designer (Diseñador UX/UI):</b>
+                        Diseña la experiencia de usuario (UX) y la interfaz de usuario (UI),
+                        enfocándose en la estética y usabilidad.
+                    </li>
+                    <li>
+                        <b>QA Engineer (Ingeniero de Calidad):</b>
+                        Realiza pruebas de software para garantizar
+                        que el producto funcione como se espera y no tenga errores.
+                    </li>
+                    <li>
+                        <b>Data Scientist (Científico de Datos):</b>
+                        Analiza datos y utiliza técnicas estadísticas y de aprendizaje automático
+                        para obtener conclusiones y mejoras basadas en datos.
+                    </li>
+                    <li>
+                        <b>Security Engineer (Ingeniero de Seguridad):</b>
+                        Se enfoca en proteger el software y la
+                        infraestructura contra amenazas de seguridad.
+                    </li>
+                </ul>
+
+                <h2>Roles de Soporte y Especialización</h2>
+                <ul>
+                    <li>
+                        <b>Technical Support (Soporte Técnico):</b>
+                        Ofrece soporte a los usuarios y resuelve problemas
+                        técnicos que surgen después de la implementación.
+                    </li>
+                    <li>
+
+                        <b>Systems Analyst (Analista de sistemas):</b>
+                        Analiza los sistemas existentes y los requisitos de los
+                        usuarios para recomendar mejoras en el software.
+                    </li>
+                    <li>
+                        <b>Business Analyst (Analista de Negocios):</b>
+                        Actúa como enlace entre el equipo técnico y el
+                        cliente, asegurando que las especificaciones del proyecto estén claras.
+                    </li>
+                </ul>
+            </div>
+            <div class="cuadro-creditos">
+                <h2>Agradecimientos a...</h2>
+
+                <!-- Colocar tu información siguiendo la misma estructura -->
+                <div class="cuadro-miembro">
+                    <div class="alinear_foto_nombre">
+                        <img src='{% static "./imagenes/foto_integrantes/foto_juan_ignacio.png" %}' alt="" class="formato-img">
+                        <p class="nombre-integrante">Juan Campot <br> 2024 - 2025</p>
+                        <ul>
+                            <li>Desarrollador Frontend</li>
+                            <li>Soporte Técnico</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="cuadro-miembro">
+                    <div class="alinear_foto_nombre">
+                        <img src='{% static "./imagenes/foto_integrantes/foto_marcos_romero.jpg" %}' alt="" class="formato-img">
+                        <p class="nombre-integrante">Marcos Romero <br> 2024 - 2025 </p>
+                        <ul>
+                            <li>Desarrollador Backend</li>
+                            <li>Administrador de Bases de Datos</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cuadro-miembro">
+                    <div class="alinear_foto_nombre">
+                        <img src='{% static "./imagenes/foto_integrantes/foto_ariel_busto.jpeg" %}' alt="" class="formato-img">
+                        <p class="nombre-integrante">Ariel Busto <br> 2024 - 2025 </p>
+                        <ul>
+                            <li>Desarrollador Frontend</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+        <!--  -->
+        </div>
+
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,225 @@
+#contenedor {
+    display: flex;
+    justify-content: center;
+}
+
+#formulario {
+    width: 75%;
+    border-radius: 6vh;
+}
+
+form {
+    background-color: rgba(15, 15, 15, 0.75);
+    border: 3px solid black;
+    margin-top: 30px;
+    /* Arriba, derecha, abajo, izquierda... movimiento del reloj */
+    padding: 0px 15px 15px 15px;
+}
+
+legend {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* CENTRAR CAMPOS */
+form p {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+form input[type="text"], form input[type="email"], #id_password2, #id_password1 {
+    width: 40%;
+}
+
+#id_password2, #id_password1 {
+    text-align: center;
+    color: black;
+    border: 2px solid black;
+}
+
+span#id_username_helptext {
+    flex-direction: column;
+    text-align: center;
+}
+
+label, span form, #id_username {
+    display: block;
+    font-size: 1.15rem;
+}
+
+li {
+    font-size: 1.15rem;
+}
+
+#mover_boton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#id_password2, #id_password1 {
+    border-radius: 20px;
+}
+
+form span, form li {
+    font-style: italic;
+}
+
+form ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: initial;
+    margin-left: 20px;
+}
+
+/*======================================
+PANTALLA EXTRA CHIQUITO, MOBILE SMALL (XS)
+320
+=======================================*/
+@media(max-width: 768px){
+    #formulario {
+        width: 100%;
+    }
+
+    form {
+        padding: 0px;
+    }
+
+    form input[type="text"], form input[type="email"], #id_password2, #id_password1 {
+        width: 93%;
+    }
+
+    span#id_username_helptext {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    span#id_password2_helptext {
+        margin-left: 15px;
+    }
+
+    form input[type="submit"] {
+        margin-bottom: 20px;
+    }
+
+    form label {
+        text-align: center;
+    }
+
+    form ul {
+        margin-left: 9%;
+    }
+    .col-cp-0{display: none;}
+    .col-cp-1{width: 8.33333333%;}
+    .col-cp-2{width: 16.66666667%;}
+    .col-cp-3{width: 25%;}
+    .col-cp-4{width: 33.33333333%;}
+    .col-cp-5{width: 41.66666667%;}
+    .col-cp-6{width: 50%;}
+    .col-cp-7{width: 58.33333333%;}
+    .col-cp-8{width: 66.66666667%;}
+    .col-cp-9{width: 75%;}
+    .col-cp-10{width: 83.33333333%;}
+    .col-cp-11{width: 91.66666667%;}
+    .col-cp-12{width: 100%;}	
+}
+
+/*======================================
+PANTALLA GRANDE, Laptop (ms)
+769 - 1024
+=======================================*/
+
+@media(min-width: 769px) and (max-width: 1024px){
+    form input[type="text"], form input[type="email"], #id_password2, #id_password1 {
+        width: 50%;
+    }
+
+    .col-pl-0{display: none;}
+    .col-pl-1{width: 8.33333333%;}
+    .col-pl-2{width: 16.66666667%;}
+    .col-pl-3{width: 25%;}
+    .col-pl-4{width: 33.33333333%;}
+    .col-pl-5{width: 41.66666667%;}
+    .col-pl-6{width: 50%;}
+    .col-pl-7{width: 58.33333333%;}
+    .col-pl-8{width: 66.66666667%;}
+    .col-pl-9{width: 75%;}
+    .col-pl-10{width: 83.33333333%;}
+    .col-pl-11{width: 91.66666667%;}
+    .col-pl-12{width: 100%;}
+}
+
+/*======================================
+PANTALLA GRANDE, Laptop (sm)
+1025 - 1440
+=======================================*/
+
+@media(min-width: 1025px) and (max-width: 1440px){
+    .col-lg-0{display: none;}
+    .col-lg-1{width: 8.33333333%;}
+    .col-lg-2{width: 16.66666667%;}
+    .col-lg-3{width: 25%;}
+    .col-lg-4{width: 33.33333333%;}
+    .col-lg-5{width: 41.66666667%;}
+    .col-lg-6{width: 50%;}
+    .col-lg-7{width: 58.33333333%;}
+    .col-lg-8{width: 66.66666667%;}
+    .col-lg-9{width: 75%;}
+    .col-lg-10{width: 83.33333333%;}
+    .col-lg-11{width: 91.66666667%;}
+    .col-lg-12{width: 100%;}
+}
+/*======================================
+PANTALLA GRANDE, Laptop (md)
+1441
+=======================================*/
+@media(min-width: 1441px){
+    legend {
+        font-size: 3.5rem;
+    }
+
+    label {
+        font-size: 2.7rem;
+    }
+
+    form input[type="text"], form input[type="email"], #id_password2, #id_password1, #id_username {
+        width: 45%;
+        border-radius: 40px;
+        font-size: 2.5rem;
+    }
+
+    span#id_username_helptext,span#id_password2_helptext, li{
+        font-size: 2rem;
+    }
+    
+    li {
+        margin-left: 20px;
+    }
+
+    form input[type="submit"] {
+        font-size: 2.9rem;
+        border-radius: 70px;
+        border: 4px solid white;
+        padding: 20px 40px 20px 40px;
+        margin: 20px 0px 20px 0px;
+    }
+
+
+    .col-pc-0{display: none;}
+    .col-pc-1{width: 8.33333333%;}
+    .col-pc-2{width: 16.66666667%;}
+    .col-pc-3{width: 25%;}
+    .col-pc-4{width: 33.33333333%;}
+    .col-pc-5{width: 41.66666667%;}
+    .col-pc-6{width: 50%;}
+    .col-pc-7{width: 58.33333333%;}
+    .col-pc-8{width: 66.66666667%;}
+    .col-pc-9{width: 75%;}
+    .col-pc-10{width: 83.33333333%;}
+    .col-pc-11{width: 91.66666667%;}
+    .col-pc-12{width: 100%;}
+}

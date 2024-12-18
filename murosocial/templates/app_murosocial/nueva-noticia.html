@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends "bases.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>Nueva Noticia</title>
+    {% endblock %}
+
+    {% block css %}
+        <link rel="stylesheet" href="{% static './estilo/nueva-noticia.css' %}">
+    {% endblock %}
+</head>
+<body>
+    {% block cuerpo %}
+        <!--
+        enctype=”multipart/form-data” : Debemos indicar en el formulario
+        que vamos a subir un archivo de este modo, o de lo contrario
+        recibiremos un error de validación diciéndonos que el campo está vacío.
+        Esto habilita al formulario a recibir archivos.
+        -->
+        <div class="contenedor">
+            <form method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>
+                        Publicar noticia
+                    </legend>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+
+                    <label id="aviso_imagen">
+                        Solo se permiten archivos ".png", ".jpg" y ".svg" Ej: Archivo.jpg
+                        <input type="file" name="imagenes" capture="user" accept="image/*, .png, .jpg, .svg" multiple>
+                    </label>
+                    <input type="submit" value="Subir Noticia">
+                </fieldset>
+
+            </form>
+        </div>
+    {% endblock %}
+</body>
+</html><fieldset></fieldset>
+
